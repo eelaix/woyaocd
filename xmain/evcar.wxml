@@ -1,0 +1,9 @@
+<evcar optid="{{optchargerid}}" />
+
+<view class="page__bd page__bd_spacing">
+    <view class="weui-btn">
+        <navigator open-type="navigateBack">
+            <button type="default">返回首页</button>
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "xmain/index",
+    "xmain/biker",
+    "xmain/evcar",
+    "xmain/bind",
+    "xmain/recharge"
+  ],
+  "plugins": {
+    "xnplugin": {
+      "version": "1.0.0",
+      "provider": "wx5a3782a4284eacc4"
+    }
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我要充电",
+    "navigationBarTextStyle":"black"
+  }
+}

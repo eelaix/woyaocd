@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "private": true,
+  "name": "xnplugin_tools",
+  "scripts": {
+    "start": "node qrcodemaker1.js"
+  },
+  "Author": "Saico Yang<saico@mosf.cn> (http://mosf.cn/)",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "request": "2.87.0"
+  },
+  "devDependencies": {}
+}

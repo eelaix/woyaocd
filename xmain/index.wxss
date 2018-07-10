@@ -1,0 +1,47 @@
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bdright {
+    border-right: 1px solid #ddd;
+}
+
+.oldwx {
+    background-color: rgba(255,255,0, 0.1);
+    text-align: center;
+    padding-top: 50rpx;
+}
+
+.pbox {
+    padding: 20rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.p1 {
+    background-color: rgba(153, 256, 153, 0.5);
+}
+
+.p0 {
+}
+
+.pbo3 {
+    padding: 20rpx;
+}
+
+.weui-panel:before {
+    border-top: none;
+}
+
+.weui-panel:after {
+    border-bottom: none;
+}
+
+.acenter {
+    text-align: center;
+}
+
+.mimg {
+    width: 128rpx;
+    height: 128rpx;
+}
