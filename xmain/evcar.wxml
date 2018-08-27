@@ -1,9 +1,7 @@
 <evcar optid="{{optchargerid}}" />
 
-<view class="page__bd page__bd_spacing">
-    <view class="weui-btn">
-        <navigator open-type="navigateBack">
-            <button type="default">返回首页</button>
-        </navigator>
-    </view>
+<view class="page__bd page__bd_spacing weui-btn" wx:if="{{optchargerid==0}}">
+    <navigator open-type="navigateBack">
+        <button type="default">返回首页</button>
+    </navigator>
 </view>

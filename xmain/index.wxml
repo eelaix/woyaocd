@@ -1,5 +1,4 @@
-<image src="{{allimages[currentimgid]}}" mode="widthFix" width="100%" 
-    style="width:100%;margin-bottom:50rpx;" />
+<image src="{{allimages[currentimgid]}}" mode="widthFix" width="100%" style="width:100%;margin-bottom:50rpx;" />
 <view class="oldwx" wx:if="{{oldversion}}">
     <view class="page__bd page__bd_spacing">
         <view class="weui-cell_warn">您的微信版本老旧，建议升级。</view>
@@ -34,15 +33,15 @@
 
 <view class="page__bd page__bd_spacing">
     <block wx:if="{{plugin_userInfo.usermobile}}">
-        <view class="weui-btn weui-footer">
-            <button disabled="true" style="font-size:1.5em;">
+        <view class="weui-btn">
+            <button disabled="true" style="font-size:1.2em;">
                 充电手机：{{plugin_userInfo.usermobile}}
             </button>
         </view>
     </block>
     <block wx:elif="{{plugin_userInfo}}">
-        <view class="weui-btn weui-footer">
-            <button disabled="true" style="font-size:1.5em;">
+        <view class="weui-btn">
+            <button disabled="true" style="font-size:1.2em;">
                 登陆用户：{{plugin_userInfo.nickname}}
             </button>
         </view>
@@ -52,21 +51,30 @@
             <loginbtn customtype="primary" customtitle="点击登陆微信账号" customstyle="color:#ff0;" />
         </view>
     </block>
+    <button class="weui-btn" open-type="contact">
+        在线客服
+    </button>
+    <button class="weui-btn" open-type="openSetting" wx:if="{{gpsclosed}}">
+        定位权限未打开，立即前往设置
+    </button>
 </view>
-
 
 <view class="page__bd page__bd_spacing">
     <view class="weui-article">
-        <view class="weui-article__h1">好消息：近期充值优惠</view>
+        <view class="weui-article__h1">充电插件上线</view>
         <view class="weui-article__section">
-            为庆贺新电桩上线，公司推出电动单车充电IC卡九折优惠，如有需要请联系客服。
+            最新版充电插件上线，合作伙伴无需要单独开发小程序即可拥有自己的充电网络。零门槛，低风险，开放源代码。
         </view>
     </view>
     <view class="weui-article">
-        <view class="weui-article__h1">近期新开通充电桩</view>
+        <view class="weui-article__h1">小牛公司帮您改：</view>
         <view class="weui-article__section">
-            上周，公司新开通两个充电站，分别是： 上马塘村充电站，两台桩，24个充电口。 三叶花园站，一台桩，12个充电口。 开业前三周，充电费用半价，欢迎体验。
+            <view>微信小程序的归属人，所有人</view>
+            <view>微信小程序的名字</view>
+            <view>微信小程序的LOGO</view>
+            <view>本页面顶部轮播图（合作伙伴提供）</view>
+            <view>本页面底部文字（合作伙伴提供）</view>
+            <view>合作伙伴拥有本程序源代码，可自己随意修改，拥有自己的版权。</view>
         </view>
     </view>
-    <button wx:if="{{1==0}}" type="default" bindtap="testdev" class="weui-btn" disabled="{{plugin_userInfo}}">开发环境模拟用户</button>
 </view>

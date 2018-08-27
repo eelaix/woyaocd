@@ -27,6 +27,7 @@ Page({
     data: {
         oldversion: false,
         currentimgid: 0,
+        gpsclosed: false,
         allimages: [
             'http://file.woniuev.cn/sito/wx9b4eea8d83f3fa30/banner0.png',
             'http://file.woniuev.cn/sito/wx9b4eea8d83f3fa30/banner1.png',
@@ -64,7 +65,19 @@ Page({
         }
     },
 
-    onReady: function() {},
+    onReady: function() {
+        var that = this;
+        wx.getSetting({
+            success: res => {
+                if (res.authSetting['scope.userLocation'] == false) {
+                    that.setData({ gpsclosed: true });
+                }
+                if (res.authSetting['scope.userInfo'] == false) {
+                    xnplugin.setVserInfo(false);
+                }
+            }
+        })
+    },
 
     onShow: function() {
         var uInfo = xnplugin.getVserInfo();
@@ -82,28 +95,6 @@ Page({
         isindex = false;
     },
 
-    testdev: function(e) {
-        var uinfo = {};
-        uinfo.needpay = 0;
-        uinfo.chgcnts = 0;
-        uinfo.utype = 8;
-        uinfo.openid = 'odWYM0ZtU1tbZTSSIAE70vwlR4gA';
-        uinfo.nickname = '测试才哥';
-        uinfo.usermobile = '13502865534';
-        uinfo.headimgurl = 'https://wx.qlogo.cn/mmopen/vi_32/AZq6fh2gwBmyGtDhb9Jfh7yYDGkdqRmPmzoS6QbtnKARDibYUX4rSBQ3Aib4zmiadL2nfLp6CpBrgGK6lwCvcU8Sg/132';
-        uinfo.sex = 1;
-        uinfo.scheduledchar = 1;
-        uinfo.wxnotify = 1;
-        uinfo.balance = '5.11';
-        uinfo.balanum = 5.11;
-        uinfo.chargerids = '';
-        uinfo.pakingid = 0;
-        uinfo.reghours = 190;
-        this.setData({
-            plugin_userInfo: uinfo
-        });
-        xnplugin.setVserInfo(uinfo);
-    },
     scannow: function() {
         var that = this;
         wx.scanCode({
@@ -112,9 +103,9 @@ Page({
                 if (res && res.errMsg && res.errMsg.indexOf('ok') > 0) {
                     var path = res.path;
                     if (path) {
-                        if (path.indexOf('pages/biker') > -1 ||
-                            path.indexOf('pages/evcar') > -1 ||
-                            path.indexOf('pages/dccar') > -1 ) {
+                        if (path.indexOf('xmain/biker') > -1 ||
+                            path.indexOf('xmain/evcar') > -1 ||
+                            path.indexOf('xmain/dccar') > -1 ) {
                             if (path.indexOf('/') > 0){
                                 path = '/' + path;
                             }
@@ -136,5 +127,13 @@ Page({
                 }
             }
         });
+    },
+
+    onShareAppMessage: function () {
+        return {
+            title: '回家充电，从家出发',
+            path: '/xmain/index',
+            success: function (res) {}
+        }
     }
 })
