@@ -1,0 +1,40 @@
+.nav-wrap {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #fff;
+    color: #000;
+    z-index: 9999999;
+}
+
+.nav-title {
+    position: absolute;
+    text-align: center;
+    max-width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 32rpx;
+    color: #2c2b2b;
+    font-weight: 600;
+}
+
+.nav-capsule {
+    display: flex;
+    align-items: center;
+    margin-left: 32rpx;
+    width: 120rpx;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.back-pre {
+    width: 32rpx;
+    height: 32rpx;
+    margin-top: 10rpx;
+}
