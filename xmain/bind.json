@@ -1,5 +1,6 @@
 {
     "usingComponents": {
+        "nav-bar": "/comp/navbar",
         "biker": "plugin://xnplugin/biker",
         "bhistory": "plugin://xnplugin/bhistory",
         "evcar": "plugin://xnplugin/evcar",
@@ -8,6 +9,5 @@
         "bindphone": "plugin://xnplugin/bindphone"
     },
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "绑定手机"
+    "navigationBarBackgroundColor": "#fff"
 }

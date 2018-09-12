@@ -1,10 +1,15 @@
+var app = getApp();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        nvabarData: {
+            showCapsule: 1,
+            title: '手机绑定',
+        },
+        height: app.globalData.height * 2 + 20
     },
 
     /**

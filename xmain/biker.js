@@ -1,3 +1,4 @@
+var app = getApp();
 var xnplugin = requirePlugin("xnplugin");
 
 Page({
@@ -6,6 +7,11 @@ Page({
      * 页面的初始数据
      */
     data: {
+        nvabarData: {
+            showCapsule: 1,
+            title: '单车充电',
+        },
+        height: app.globalData.height * 2 + 20,
         optchargerid: 0
     },
 

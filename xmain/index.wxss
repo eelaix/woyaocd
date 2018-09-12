@@ -1,47 +1,31 @@
-.container {
-    padding-left: 10px;
-    padding-right: 10px;
+.siteinfo {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    background-color: rgba(204,255,255, 0.7);
+    width:100%;
 }
-
-.bdright {
-    border-right: 1px solid #ddd;
+.xnbtn {
+    margin: 20rpx;
 }
-
-.oldwx {
-    background-color: rgba(255,255,0, 0.1);
-    text-align: center;
-    padding-top: 50rpx;
+.maingroup {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    display: flex;
+    background: rgba(0,0,0,0.5);
+    margin-left: 10px;
+    margin-bottom: 8px;
+    border-radius: 10px;
 }
-
-.pbox {
-    padding: 20rpx;
-    border-bottom: 1px solid #ddd;
+.mainbtn {
+    width: 100%;
+    display: flex;
+    margin: 20rpx;
 }
-
-.p1 {
-    background-color: rgba(153, 256, 153, 0.5);
+.maincover {
+    margin: 0 auto;
 }
-
-.p0 {
-}
-
-.pbo3 {
-    padding: 20rpx;
-}
-
-.weui-panel:before {
-    border-top: none;
-}
-
-.weui-panel:after {
-    border-bottom: none;
-}
-
-.acenter {
-    text-align: center;
-}
-
-.mimg {
-    width: 128rpx;
-    height: 128rpx;
+.mainimg {
+    width:80rpx;
 }

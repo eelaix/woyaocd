@@ -1,9 +1,9 @@
 <nav-bar navbar-data="{{nvabarData}}"></nav-bar>
 <view style="margin-top:{{height+10}}px;">
-    <recharge hasback="0" />
+    <dccar optid="{{optchargerid}}" />
 </view>
 
-<view class="page__bd page__bd_spacing weui-btn">
+<view class="page__bd page__bd_spacing weui-btn" wx:if="{{optchargerid==0}}">
     <navigator open-type="navigateBack">
         <button type="default">返回首页</button>
     </navigator>

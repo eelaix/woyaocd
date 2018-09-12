@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+        "nav-bar": "/comp/navbar",
+        "dccar": "plugin://xnplugin/dccar"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "扫码充电"
+}
