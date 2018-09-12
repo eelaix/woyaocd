@@ -3,19 +3,17 @@
     "xmain/index",
     "xmain/biker",
     "xmain/evcar",
+    "xmain/dccar",
     "xmain/bind",
     "xmain/recharge"
   ],
   "plugins": {
     "xnplugin": {
-      "version": "2.0.1",
+      "version": "2.0.3",
       "provider": "wx5a3782a4284eacc4"
     }
   },
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "我要充电",
-    "navigationBarTextStyle":"black"
+    "navigationStyle":"custom"
   }
 }
