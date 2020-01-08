@@ -1,6 +1,12 @@
 var xnplugin = requirePlugin("xnplugin");
 App({
     onLaunch: function (options) {
+        wx.getSystemInfo({
+            success: (res) => {
+                this.globalData.height = res.statusBarHeight
+            }
+        });
+
         //xnalugin.setSomeThing('');
 
         //以下代码是***充电主程序***用的，与插件无关，与充电业务无关
@@ -34,6 +40,7 @@ App({
         })
     },
     globalData: {
+        height: 0,
         userInfo: null
     }
 })

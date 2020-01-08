@@ -1,21 +1,29 @@
 {
-  "pages":[
-    "xmain/index",
-    "xmain/biker",
-    "xmain/evcar",
-    "xmain/bind",
-    "xmain/recharge"
-  ],
-  "plugins": {
-    "xnplugin": {
-      "version": "2.0.1",
-      "provider": "wx5a3782a4284eacc4"
-    }
-  },
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "我要充电",
-    "navigationBarTextStyle":"black"
-  }
+    "pages": [
+        "xmain/index",
+        "xmain/biker",
+        "xmain/evcar",
+        "xmain/dccar",
+        "xmain/bind",
+        "xmain/feecard",
+        "xmain/recharge"
+    ],
+    "plugins": {
+        "xnplugin": {
+            "version": "8.3.8",
+            "provider": "wx5a3782a4284eacc4"
+        }
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "您和电桩的距离超出设定范围将无法启动充电。"
+        }
+    },
+    "resizable": true,
+    "window": {
+        "pageOrientation": "auto",
+        "navigationStyle": "custom"
+    },
+    "serviceProviderTicket": "hkeCbTQ3JtaHOBAv8Hc13cZTTmDma0ScfQI+03sUmlUic74QvSbEy0DMPVnEos0K63WpLo+ATwhEF80tMne7OZ6tUJ/J1xseZUA=",
+    "sitemapLocation": "sitemap.json"
 }
