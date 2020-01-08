@@ -1,8 +1,13 @@
-<biker optid="{{optchargerid}}" />
+<nav-bar navbar-data="{{navbarData}}"></nav-bar>
+<view style="margin-top:{{height+10}}px;">
+    <biker optid="{{optchargerid}}"/>
+</view>
 
-
-<view class="page__bd page__bd_spacing weui-btn" wx:if="{{optchargerid==0}}">
-    <navigator open-type="navigateBack">
+<view class="page__bd page__bd_spacing weui-btn">
+    <navigator open-type="navigateBack" wx:if="{{pages>1}}">
         <button type="default">返回首页</button>
+    </navigator>
+    <navigator url="index" wx:else>
+        <button type="default">回到首页</button>
     </navigator>
 </view>

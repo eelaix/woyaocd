@@ -1,4 +1,7 @@
-<recharge hasback="0" />
+<nav-bar navbar-data="{{navbarData}}"></nav-bar>
+<view style="margin-top:{{height+10}}px;">
+    <recharge hasback="0" />
+</view>
 
 <view class="page__bd page__bd_spacing weui-btn">
     <navigator open-type="navigateBack">

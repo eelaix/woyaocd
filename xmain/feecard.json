@@ -1,8 +1,8 @@
 {
     "usingComponents": {
         "nav-bar": "/comp/navbar",
-        "bindphone": "plugin://xnplugin/bindphone"
+        "feecard": "plugin://xnplugin/feecard"
     },
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff"
+    "navigationBarBackgroundColor": "#f8f8f8"
 }

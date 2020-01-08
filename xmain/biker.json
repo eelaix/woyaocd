@@ -1,13 +1,8 @@
 {
     "usingComponents": {
-        "biker": "plugin://xnplugin/biker",
-        "bhistory": "plugin://xnplugin/bhistory",
-        "evcar": "plugin://xnplugin/evcar",
-        "loginbtn": "plugin://xnplugin/loginbtn",
-        "recharge": "plugin://xnplugin/recharge",
-        "bindphone": "plugin://xnplugin/bindphone"
+        "nav-bar": "/comp/navbar",
+        "biker": "plugin://xnplugin/biker"
     },
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "单车充电"
+    "navigationBarBackgroundColor": "#fff"
 }

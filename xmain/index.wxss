@@ -1,47 +1,103 @@
-.container {
-    padding-left: 10px;
-    padding-right: 10px;
+.siteinfo {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    background-color: rgba(204,255,255, 0.7);
+    width:100%;
+    z-index:0;
 }
-
-.bdright {
-    border-right: 1px solid #ddd;
+.xnbtn {
+    margin: 20rpx;
 }
-
-.oldwx {
-    background-color: rgba(255,255,0, 0.1);
+.xnbts {
+    margin: 4rpx;
+}
+.maincover {
+    margin: 0 auto;
+}
+@media screen and (orientation: portrait){
+    .maingroup1 {
+    width:92vw;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    display: flex;
+    background: rgba(204, 204, 204, 0.8);
+    margin-left: 4vw;
+    margin-bottom: 4vw;
+    border-radius: 4vw;
+    }
+    .mainbtn1, .navbtn{
+    width: 100%;
+    display: flex;
+    margin: 2vw;
+    }
+    .mainimg1 {
+    width:15vw;
+    }
+    .navto {
+    width:96vw;
+    background: rgba(102,102,102,0.7);
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 5vw;
+    margin-top: 15vw;
+    }
+    .navimg {
+    width:8vw;
+    margin: 0 auto;
+    }
+    .maincov2 {
+        margin: 0 auto;
+    }
+}
+@media screen and (orientation: landscape) {
+    .maingroup1 {
+    height:82vh;
+    position:fixed;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(187,187,187,0.8);
+    margin-right: 3vh;
+    margin-bottom: 2vh;
+    border-radius: 4vh;
+    }
+    .mainbtn1 {
+    width: 15vh;
+    margin: 4vh;
+    }
+    .navbtn {
+    width: 10vh;
+    margin: 4vh;
+    }
+    .mainimg1 {
+    }
+    .navto {
+    height:50vh;
+    background: rgba(102,102,102,0.7);
+    position:fixed;
+    left: 3vw;
+    top: 5vh;
+    border-radius: 3vw;
+    }
+    .navimg {
+        margin: 0 auto;
+        width: 8vh;
+    }
+    .maincov2{
+        margin-bottom: 5vh;
+    }
+}
+.btnlb {
+    line-height:unset;
+    background:rgba(255,255,0,0.5);
+    font-size:xx-small;
+}
+.ching{
+    z-index: 9999;
+    color: #30f;
+    font-size:16rpx;
     text-align: center;
-    padding-top: 50rpx;
-}
-
-.pbox {
-    padding: 20rpx;
-    border-bottom: 1px solid #ddd;
-}
-
-.p1 {
-    background-color: rgba(153, 256, 153, 0.5);
-}
-
-.p0 {
-}
-
-.pbo3 {
-    padding: 20rpx;
-}
-
-.weui-panel:before {
-    border-top: none;
-}
-
-.weui-panel:after {
-    border-bottom: none;
-}
-
-.acenter {
-    text-align: center;
-}
-
-.mimg {
-    width: 128rpx;
-    height: 128rpx;
+    margin-bottom: -16rpx;
+    background-color: #0f0;
 }

@@ -1,13 +1,8 @@
 {
     "usingComponents": {
-        "biker": "plugin://xnplugin/biker",
-        "bhistory": "plugin://xnplugin/bhistory",
-        "evcar": "plugin://xnplugin/evcar",
-        "loginbtn": "plugin://xnplugin/loginbtn",
-        "recharge": "plugin://xnplugin/recharge",
-        "bindphone": "plugin://xnplugin/bindphone"
+        "nav-bar": "/comp/navbar",
+        "recharge": "plugin://xnplugin/recharge"
     },
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "账户充值"
+    "navigationBarBackgroundColor": "#fff"
 }

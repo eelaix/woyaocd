@@ -1,80 +1,87 @@
-<image src="{{allimages[currentimgid]}}" mode="widthFix" width="100%" style="width:100%;margin-bottom:50rpx;" />
-<view class="oldwx" wx:if="{{oldversion}}">
-    <view class="page__bd page__bd_spacing">
-        <view class="weui-cell_warn">您的微信版本老旧，建议升级。</view>
-    </view>
-</view>
-<view class="page__bd page__bd_spacing">
-    <view class="weui-panel">
-        <view class="weui-flex acenter">
-            <view class="weui-flex__item bdright">
-                <navigator url="biker" class="pbox">
-                    <image src="/image/chbk.png" class="mimg" />
-                    <view class="weui-msg__desc">单车充电</view>
-                </navigator>
-                <navigator class="pbo3" bindtap="scannow" open-type="switchTab" url="index">
-                    <image src="/image/scan.png" class="mimg" />
-                    <view class="weui-msg__desc">扫码充电</view>
-                </navigator>
-            </view>
-            <view class="weui-flex__item">
-                <navigator url="evcar" class="pbox">
-                    <image src="/image/chev.png" class="mimg" />
-                    <view class="weui-msg__desc">汽车充电</view>
-                </navigator>
-                <navigator url="recharge" class="pbo3">
-                    <image src="/image/mpay.png" class="mimg" />
-                    <view class="weui-msg__desc">账户充值</view>
-                </navigator>
-            </view>
-        </view>
-    </view>
-</view>
-
-<view class="page__bd page__bd_spacing">
-    <block wx:if="{{plugin_userInfo.usermobile}}">
-        <view class="weui-btn">
-            <button disabled="true" style="font-size:1.2em;">
-                充电手机：{{plugin_userInfo.usermobile}}
-            </button>
-        </view>
-    </block>
-    <block wx:elif="{{plugin_userInfo}}">
-        <view class="weui-btn">
-            <button disabled="true" style="font-size:1.2em;">
-                登陆用户：{{plugin_userInfo.nickname}}
-            </button>
-        </view>
-    </block>
-    <block wx:else>
-        <view class="weui-btn">
-            <loginbtn customtype="primary" customtitle="点击登陆微信账号" customstyle="color:#ff0;" />
-        </view>
-    </block>
-    <button class="weui-btn" open-type="contact">
-        在线客服
-    </button>
-    <button class="weui-btn" open-type="openSetting" wx:if="{{gpsclosed}}">
-        定位权限未打开，立即前往设置
-    </button>
-</view>
-
-<view class="page__bd page__bd_spacing">
-    <view class="weui-article">
-        <view class="weui-article__h1">充电插件上线</view>
-        <view class="weui-article__section">
-            最新版充电插件上线，合作伙伴无需要单独开发小程序即可拥有自己的充电网络。零门槛，低风险，开放源代码。
-        </view>
-    </view>
-    <view class="weui-article">
-        <view class="weui-article__h1">小牛公司帮您改：</view>
-        <view class="weui-article__section">
-            <view>微信小程序的归属人，所有人</view>
-            <view>微信小程序的名字</view>
-            <view>微信小程序的LOGO</view>
-            <view>本页面顶部轮播图（合作伙伴提供）</view>
-            <view>本页面底部文字（合作伙伴提供）</view>
-            <view>合作伙伴拥有本程序源代码，可自己随意修改，拥有自己的版权。</view>
-        </view>
-    </view>
-</view>
+<map
+id="map"
+show-location
+scale="{{mapScale}}"
+markers="{{markers}}"
+latitude="{{centerlat}}"
+longitude="{{centerlng}}"
+polyline="{{polylines}}"
+bindmarkertap="markertap"
+bindtap="maptaped"
+bindregionchange="regionchange"
+subkey="{{mapsubkey}}"
+style="width:100vw;height:100vh;">
+<cover-view style="position:fixed;width:100vw;top:2vh" bindtap="maptaped">
+<cover-image src="/image/mlogo.png" style="width:20vw;margin:0 auto;"></cover-image>
+</cover-view>
+<cover-view style="position:fixed;width:100vw;top:30vh;" wx:if="{{errormsg}}">
+<button type="warn" style="opacity:0.9;">{{errormsg}}</button>
+</cover-view>
+<cover-view bindtap="gotofeecard" style="position:fixed;width:80vw;top:20vh;left:10vw" wx:if="{{feecard}}">
+<button type="primary">立即激活充值卡</button>
+</cover-view>
+<cover-view bindtap="scaleup" style="position:fixed;left:3vw;top:62vh">
+    <cover-image src="/image/scaleup.png" style="width:6vmax;"/>
+</cover-view>
+<cover-view bindtap="scaledn" style="position:fixed;left:3vw;top:70vh;">
+    <cover-image src="/image/scaledn.png" style="width:6vmax;"/>
+</cover-view>
+<cover-view bindtap="backcenter" style="position:fixed;left:3vw;top:78vh;">
+    <cover-image src="/image/location.png" style="width:6vmax;"/>
+</cover-view>
+<cover-view class="maingroup1" wx:if="{{showsiteid==0}}">
+    <cover-view class="mainbtn1">
+        <cover-view class="maincover" bindtap="scan">
+            <cover-image class="mainimg1" src="/image/scan.png" />
+        </cover-view>
+        <cover-view class="maincover" bindtap="chbk">
+            <cover-view class="ching" wx:if="{{bkid}}">{{bkmsg}}</cover-view>
+            <cover-image class="mainimg1" src="/image/chbk.png" />
+        </cover-view>
+        <cover-view class="maincover" bindtap="chev">
+            <cover-view class="ching" wx:if="{{acid}}">{{acmsg}}</cover-view>
+            <cover-image class="mainimg1" src="/image/chev.png" />
+        </cover-view>
+        <cover-view class="maincover" bindtap="dcar">
+            <cover-view class="ching" wx:if="{{dcid}}">{{dcmsg}}</cover-view>
+            <cover-image class="mainimg1" src="/image/dcar.png" />
+        </cover-view>
+        <cover-view class="maincover" bindtap="mpay">
+            <cover-image class="mainimg1" src="/image/mpay.png" />
+        </cover-view>
+    </cover-view>
+</cover-view>
+<cover-view class="siteinfo" wx:if="{{showsiteid>0}}">
+<button type="{{btypes[item.alive]}}" wx:for="{{chargers}}" wx:key="{{item.id}}"
+class="{{chargers.length>8?'xnbts':'xnbtn'}}" style="font-size:{{chargerfontsize}}px;"
+id="{{item.id}}" bindtap="gocharger">{{item.info}}</button>
+</cover-view>
+<cover-view class="navto" wx:if="{{showroute}}">
+    <cover-view class="navbtn">
+        <cover-view class="maincov2" bindtap="routeplancar">
+            <cover-view>
+                <cover-image class="navimg" src="/image/driving{{routetype==0?1:0}}.png" />
+            </cover-view>
+            <cover-view>
+                <button class="btnlb">{{routelb0}}</button>
+            </cover-view>
+        </cover-view>
+        <cover-view class="maincov2" bindtap="routeplanwak">
+            <cover-view>
+                <cover-image class="navimg" src="/image/walking{{routetype==1?1:0}}.png" />
+            </cover-view>
+            <cover-view>
+                <button class="btnlb">{{routelb1}}</button>
+            </cover-view>
+        </cover-view>
+        <cover-view class="maincov2" bindtap="routeplanbik">
+            <cover-view>
+                <cover-image class="navimg" src="/image/bicycling{{routetype==2?1:0}}.png" />
+            </cover-view>
+            <cover-view>
+                <button class="btnlb">{{routelb2}}</button>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+</cover-view>
+</map>
